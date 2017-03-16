@@ -330,11 +330,14 @@ int main(int argc, char** argv)
     }
     for(int cross=8;cross<257;cross+=8)
     {
-        chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
-        strassen(A, B, C, mdim,cross);
-        chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
-        chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-        cout <<"cross_over:"<<cross<<"\t"<<time_span.count() <<endl;
+        for(int t=0;t<5;t++)
+        {
+            chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+            strassen(A, B, C, mdim,cross);
+            chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
+            chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
+            cout <<"cross_over:"<<cross<<"\t"<<time_span.count() <<endl;
+        }
     }
     return 0;
 }
