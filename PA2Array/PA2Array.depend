@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1489704358 source:c:\users\lilx\onedrive\documents\17 spring\cs124\cs124pa2\pa2array.cpp
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<ctype.h>
+	<iostream>
+	<fstream>
+	<cmath>
+	<cstring>
+	<chrono>
+

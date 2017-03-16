@@ -1,5 +1,6 @@
 
 #include<stdio.h>
+#include<stdlib.h>
 #include <time.h>
 #include <ctype.h>
 #include <iostream>
@@ -307,44 +308,33 @@ void print_diagonal(int** M, int n)
 
 int main(int argc, char** argv)
 {
-    //for(int d=1000;d<2100;d+=200)
-    {
-        //for(int t=0;t<5;t++)
-        for(int cross=10;cross<256;cross+=10)
-        {
-            cout<<cross<<"\t";
-            int mdim =999;
-            srand(time(NULL));
-            int** A = initiate_matrix(mdim);
-            int** B = initiate_matrix(mdim);
-            int** C = initiate_matrix(mdim);
-            gen_matrix(A, mdim);
-            gen_matrix(B, mdim);
-            //chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
-            //strassen(A, B, C, mdim,1);
-            chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
-            //chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            //cout <<"pure strassen"<<"\t"<<time_span.count() <<"\t";
-            strassen(A, B, C, mdim,cross);
-            chrono::high_resolution_clock::time_point t3 = chrono::high_resolution_clock::now();
-            chrono::duration<double> time_span2 = chrono::duration_cast<chrono::duration<double>>(t3 - t2);
-            cout << "optimized strassen"<<"\t"<<time_span2.count() <<"\t"<<endl;
-            /*strassen(A, B, C, mdim,16);
-            chrono::high_resolution_clock::time_point t4 = chrono::high_resolution_clock::now();
-            chrono::duration<double> time_span3 = chrono::duration_cast<chrono::duration<double>>(t4 - t3);
-            cout << "optimized strassen 16*16"<<"\t"<<time_span3.count() <<"\t";
-            strassen(A, B, C, mdim,32);
-            chrono::high_resolution_clock::time_point t5 = chrono::high_resolution_clock::now();
-            chrono::duration<double> time_span4 = chrono::duration_cast<chrono::duration<double>>(t5 - t4);
-            cout << "optimized strassen 32*32"<<"\t"<<time_span4.count() <<"\t";
-            naive(A, B, C, mdim);
-            chrono::high_resolution_clock::time_point t6 = chrono::high_resolution_clock::now();
-            chrono::duration<double> time_span5 = chrono::duration_cast<chrono::duration<double>>(t6 - t5);
-            cout<<"naive algorithm"<<"\t"<<time_span5.count()<<endl;*/
-            free_matrix(A, mdim);
-            free_matrix(B, mdim);
-            free_matrix(C, mdim);
-        }
+    int flag=(int)strtol(argv[1],NULL,10);
+    int mdim=(int)strtol(argv[2],NULL,10);
+    string filename=argv[3];
+    int** A = initiate_matrix(mdim);
+    int** B = initiate_matrix(mdim);
+    int** C = initiate_matrix(mdim);
+    int index=0;
+    std::ifstream infile(filename);
+    int temp;
+    while (infile >> temp){
+            if(index<(mdim*mdim-1))
+            {
+                A[index/mdim][index%mdim]=temp;
+            }
+            if(index>(mdim*mdim-1))
+            {
+                B[(index-mdim*mdim-1)/mdim][(index-mdim*mdim-1)%mdim]=temp;
+            }
+            index++;
     }
-	return 0;
+    for(int cross=8;cross<257;cross+=8)
+    {
+        chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+        strassen(A, B, C, mdim,cross);
+        chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
+        chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
+        cout <<"cross_over:"<<cross<<"\t"<<time_span.count() <<endl;
+    }
+    return 0;
 }
