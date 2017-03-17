@@ -3,6 +3,8 @@
 \usepackage{fullpage} % changes the margin
 \usepackage{pdflscape}
 \usepackage{rotating}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
 
 \begin{document}
 %Header-Make sure you update this information!!!!
@@ -23,6 +25,35 @@ For conventional algorithm, we have a total of $n^3$ multiplication and $n^2(n-1
 \[f_c(n)=n^2(2n-1)\]
 Let's assume we set cross-over point at $n_0$. That means above $n_0$, we used Strassen's algorithm and below $n_0$, we used conventional algorithm. So the running time of this hybrid algorithm is:
 \[f_{n_0}=7^{log_2{\frac{n}{n_0}}}(2n_0^3-n_0^2)+6n^2((\frac{7}{4})^{log_2{\frac{n}{n_0}}}-1)\]
+
+We cannot achieve a closed form $n_0$ for every $n$. But we can get a numeric estimation. The theoretical running time of standard Strassen's, modified Strassen's with $2\times2$, $4\times4$, $8 \times 8$, $16 \times 16$ basic matrix and conventional algorithm are listed below:
+\begin{table}[ht]
+	\centering
+	\caption{theoretical running time comparison among algorithms up to $2^{12}$}
+	\begin{tabular}{rrrrrrrr}
+		\hline
+		& $n$ & Strassen's & 2*2 & 4*4 & 8*8 & 16*16 & Conventional \\ 
+		\hline
+		& 16 & 15271 & 10812 & 8656 & 7872 & 7936 & 7936 \\ 
+		& 32 & 111505 & 80292 & 65200 &\cellcolor{blue!25} 59712 & 60160 & 64512 \\ 
+		& 64 & 798967 & 580476 &\cellcolor{blue!25} 474832 & 436416 & 439552 & 520192 \\ 
+		& 128 & 5666497 &\cellcolor{blue!25} 4137060 & 3397552 & 3128640 & 3150592 & 4177920 \\ 
+		& 256 & 39960391&  \cellcolor{blue!25}29254332 & 24077776 & 22195392 & 22349056 & 33488896 \\ 
+		& 512 & 280902385 &\cellcolor{blue!25} 205959972 & 169724080 & 156547392 & 157623040 & 268173312 \\ 
+		& 1024 &\cellcolor{blue!25} 1971035287 & 1446438396 & 1192787152 & 1100550336 & 1108079872 & 2146435072 \\ 
+		& 2048 &\cellcolor{blue!25} 13816121377 & 10143943140 & 8368384432 & 7722726720 & 7775433472 & 17175674880 \\ 
+		& 4096 &\cellcolor{blue!25} 96788347111 & 71083099452 & 58654188496 & 54134584512 & 54503531776 & 137422176256 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+\begin{figure*}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Numeric}
+	\caption[]{theoretical running time comparison among algorithms up to $2^{12}$}
+	\label{fig:numericto256}
+\end{figure*}
+For a matrix with size of $n$, when $n\leq 16$, by no means can Strassen's run faster than conventional algorithm in theory. Then for a matrix of size 32, modified Strassen's with $8\times8$ basic matrix runs faster. In this case, the theoretical cross-over point maybe between 4 and 8. Then for a matrix with 
+
 \section*{Alternative Solutions}
 
 \section*{Optimum Solution}
@@ -34,22 +65,4 @@ Let's assume we set cross-over point at $n_0$. That means above $n_0$, we used S
 \section*{Final Evaluation}
 
 \section*{Attachments}
-\begin{landscape}
-	\centering
-	\begin{tabular}{rrrrrrrr}
-		\hline
-		& n & Strassen's & 2*2 & 4*4 & 8*8 & 16*16 & Conventional \\ 
-		\hline
-		4 & 16.00 & 15271.00 & 10812.00 & 14928.00 & 29376.00 & 65280.00 & 7936.00 \\ 
-		5 & 32.00 & 111505.00 & 80292.00 & 109104.00 & 210240.00 & 461568.00 & 64512.00 \\ 
-		6 & 64.00 & 798967.00 & 580476.00 & 782160.00 & 1490112.00 & 3249408.00 & 520192.00 \\ 
-		7 & 128.00 & 5666497.00 & 4137060.00 & 5548848.00 & 10504512.00 & 22819584.00 & 4177920.00 \\ 
-		8 & 256.00 & 39960391.00 & 29254332.00 & 39136848.00 & 73826496.00 & 160032000.00 & 33488896.00 \\ 
-		9 & 512.00 & 280902385.00 & 205959972.00 & 275137584.00 & 517965120.00 & 1121403648.00 & 268173312.00 \\ 
-		10 & 1024.00 & 1971035287.00 & 1446438396.00 & 1930681680.00 & 3630474432.00 & 7854544128.00 & 2146435072.00 \\ 
-		11 & 2048.00 & 13816121377.00 & 10143943140.00 & 13533646128.00 & 25432195392.00 & 55000683264.00 & 17175674880.00 \\ 
-		12 & 4096.00 & 96788347111.00 & 71083099452.00 & 94811020368.00 & 178100865216.00 & 385080280320.00 & 137422176256.00 \\ 
-		\hline
-	\end{tabular}
-\end{landscape}
 \end{document}
