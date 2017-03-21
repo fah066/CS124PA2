@@ -53,9 +53,9 @@ ggplot(data=result,
   theme(axis.text=element_text(size=12),
         axis.title=element_text(size=14))
 
-data.2048<-read.table("record_2048",header = F)
-data.2048$V1<-as.numeric(gsub("cross_over:", "", data.2048$V1))
-data.2048<-aggregate(data.2048,list(data.2048$V1),mean)
-data.2048<-as.data.frame(cbind(data.2048$V1,data.2048$V2))
-names(data.2048)<-c("cross","time")
-ggplot(data=data.2048,aes(x=cross, y=time))+geom_line(size=1)
+data.1025<-read.table("record_1025",header = F)
+data.1025$V1<-as.numeric(gsub("cross_over:", "", data.1025$V1))
+data.1025<-aggregate(data.1025,list(data.1025$V1),mean)
+data.1025<-as.data.frame(cbind(data.1025$V1,data.1025$V2))
+names(data.1025)<-c("cross","time")
+ggplot(data=data.1025,aes(x=cross, y=time))+geom_line(size=1)
