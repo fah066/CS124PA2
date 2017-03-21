@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.1.31)  21 MAR 2017 01:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.1.31)  21 MAR 2017 12:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -121,7 +121,11 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (./writeup.aux)
+) (./writeup.aux
+
+LaTeX Warning: Label `fig:truntime' multiply defined.
+
+)
 \openout1 = `writeup.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -136,8 +140,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
-
-(c:/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count90
 \scratchdimen=\dimen107
@@ -206,52 +209,107 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 16.
+<TRuntimemulti.png, id=1, 709.14937pt x 365.11406pt>
+File: TRuntimemulti.png Graphic file (type png)
+ <use TRuntimemulti.png>
+Package pdftex.def Info: TRuntimemulti.png used on input line 30.
+(pdftex.def)             Requested size: 407.66833pt x 209.89438pt.
 
-Overfull \hbox (4.99081pt too wide) in paragraph at lines 32--45
+Overfull \hbox (4.99081pt too wide) in paragraph at lines 39--52
  [][] 
  []
 
-<Truntime.png, id=1, 391.4625pt x 364.36125pt>
+<Truntime.png, id=2, 391.4625pt x 364.36125pt>
 File: Truntime.png Graphic file (type png)
  <use Truntime.png>
-Package pdftex.def Info: Truntime.png used on input line 49.
+Package pdftex.def Info: Truntime.png used on input line 56.
 (pdftex.def)             Requested size: 226.48395pt x 210.80705pt.
 
-<Truntime8.png, id=2, 391.4625pt x 364.36125pt>
+<Truntime8.png, id=3, 391.4625pt x 364.36125pt>
 File: Truntime8.png Graphic file (type png)
  <use Truntime8.png>
-Package pdftex.def Info: Truntime8.png used on input line 50.
+Package pdftex.def Info: Truntime8.png used on input line 57.
 (pdftex.def)             Requested size: 226.48395pt x 210.80705pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 49--51
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 56--58
 [][] [] 
  []
 
 [1
 
-{c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./Truntime.
-png> <./Truntime8.png>] [3] (./writeup.aux) ) 
+{c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./TRuntimemulti.png>] <Actual1024.png, id=22, 391.4625pt x 365.11406pt>
+File: Actual1024.png Graphic file (type png)
+
+<use Actual1024.png>
+Package pdftex.def Info: Actual1024.png used on input line 72.
+(pdftex.def)             Requested size: 226.48395pt x 211.2426pt.
+ <Actual1025.png, id=23, 391.4625pt x 365.11406pt>
+File: Actual1025.png Graphic file (type png)
+
+<use Actual1025.png>
+Package pdftex.def Info: Actual1025.png used on input line 73.
+(pdftex.def)             Requested size: 226.48395pt x 211.2426pt.
+ <Actual2048.png, id=24, 391.4625pt x 364.36125pt>
+File: Actual2048.png Graphic file (type png)
+
+<use Actual2048.png>
+Package pdftex.def Info: Actual2048.png used on input line 74.
+(pdftex.def)             Requested size: 226.48395pt x 210.80705pt.
+ <Actual2049.png, id=25, 391.4625pt x 364.36125pt>
+File: Actual2049.png Graphic file (type png)
+
+<use Actual2049.png>
+Package pdftex.def Info: Actual2049.png used on input line 75.
+(pdftex.def)             Requested size: 226.48395pt x 210.80705pt.
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 72--76
+[][] []
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 72--76
+[] [] 
+ []
+
+
+Overfull \hbox (25.13702pt too wide) in paragraph at lines 83--96
+ [][] 
+ []
+
+[3 <./Truntime.png> <./Truntime8.png>] [4 <./Actual1024.png> <./Actual1025.png>
+ <./Actual2048.png> <./Actual2049.png>]
+
+LaTeX Warning: Float too large for page by 10.69266pt on input line 161.
+
+[5] [6] [7] (./writeup.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2267 strings out of 493013
- 30886 string characters out of 6136993
- 105153 words of memory out of 5000000
- 5783 multiletter control sequences out of 15000+600000
+ 2294 strings out of 493013
+ 31371 string characters out of 6136993
+ 114200 words of memory out of 5000000
+ 5805 multiletter control sequences out of 15000+600000
  7589 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,35p,1087b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2016/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/20
-16/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2016/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on writeup.pdf (3 pages, 105347 bytes).
+ 41i,10n,35p,1115b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2016/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on writeup.pdf (7 pages, 132796 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -59,3 +59,15 @@ data.1025<-aggregate(data.1025,list(data.1025$V1),mean)
 data.1025<-as.data.frame(cbind(data.1025$V1,data.1025$V2))
 names(data.1025)<-c("cross","time")
 ggplot(data=data.1025,aes(x=cross, y=time))+geom_line(size=1)
+
+data.1024<-data.1024[data.1024$cross<300,]
+data.1025<-data.1025[data.1025$cross<300,]
+data.2048<-data.2048[data.2048$cross<400,]
+data.2049<-data.2049[data.2049$cross<400,]
+data.1024$time<-round(data.1024$time,2)
+data.1025$time<-round(data.1025$time,2)
+data.2048$time<-round(data.2048$time,2)
+data.2049$time<-round(data.2049$time,2)
+
+data.2000<-cbind((data.2048$cross),(data.2048$time),(data.2049$time))
+data.1000<-cbind((data.1024$cross),data.1024$time,data.1025$time)
